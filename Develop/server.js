@@ -15,7 +15,25 @@ app.use(express.json());
 // Routes
 // =============================================================
 
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "./public/index.html"));
+});
 
+app.get("/notes", function(req, res) {
+    res.sendFile(path.join(__dirname, "./public/notes.html"));
+});
+
+app.get("/api/notes", function(req, res) {
+    // should read the db.json file
+});
+
+app.post("/api/notes", function(req, res) {
+    // should receive a new note to save to the request body, add to db.json and return to the client 
+});
+
+app.get("/api/notes/:id", function(req, res) {
+    // should delete the notes based on their id 
+});
 
 // LISTENER
 // The below code effectively "starts" our server
